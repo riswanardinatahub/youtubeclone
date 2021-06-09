@@ -72,7 +72,7 @@
             @foreach ($channels as $channelVideos)
             @foreach ($channelVideos as $video)
 
-            <div class="single-popular-carusel col-lg-3 col-md-6">
+            <div class="single-popular-carusel col-lg-12 col-md-12">
                 <div class="thumb-wrap relative">
                     <div class="thumb relative rounded">
                         <div class="overlay overlay-bg"></div>

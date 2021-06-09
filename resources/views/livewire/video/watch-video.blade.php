@@ -1,142 +1,144 @@
 <div>
-    @push('custom-css')
-    <link href="https://vjs.zencdn.net/7.11.4/video-js.css" rel="stylesheet" />
-    @endpush
-    {{-- <div class="container-fluid">
-        <div class="row mt-5">
-            <div class="col-md-12 p-0">
-                    <div class="video-container" wire:ignore> 
-                    
-                        <video id="yt-video" controls preload="auto"
-                            class="video-js vjs-fill vjs-styles=default vjs-big-play-centered" data-setup="{}"
-                            poster="{{ asset('videos/'. $video->uid . '/' . $video->thumbnail_image)}}">
-                            <source src="{{ asset('videos/'. $video->uid . '/' . $video->proccessed_file)}}"
-                                type="application/x-mpegURL">
-                            <p class="vjs-no-js">
-                                To view this video please enable JavaScript, and consider upgrading to a
-                                web browser that
-                                <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5
-                                    video</a>
-                            </p>
-                        </video>
-                    </div>
-            </div>
-        </div>
+	@push('custom-css')
+	<link href="https://vjs.zencdn.net/7.11.4/video-js.css" rel="stylesheet" />
+	@endpush
+	{{-- <div class="container-fluid">
+		<div class="row mt-5">
+			<div class="col-md-12 p-0">
+				<div class="video-container" wire:ignore>
 
-        <div class="row">
-            <div class="col-md-8">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="">
-                                <h3 class="mt-4">{{ $video->title }}</h3>
-                                <p class="gray-text">{{ $video->views }} views . {{ $video->uploaded_date }} </p>
-                            </div>
-                            <div class="">
-                                <livewire:video.voting :video="$video" />
-                            </div>
-                        </div>
+					<video id="yt-video" controls preload="auto"
+						class="video-js vjs-fill vjs-styles=default vjs-big-play-centered" data-setup="{}"
+						poster="{{ asset('videos/'. $video->uid . '/' . $video->thumbnail_image)}}">
+						<source src="{{ asset('videos/'. $video->uid . '/' . $video->proccessed_file)}}"
+							type="application/x-mpegURL">
+						<p class="vjs-no-js">
+							To view this video please enable JavaScript, and consider upgrading to a
+							web browser that
+							<a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5
+								video</a>
+						</p>
+					</video>
+				</div>
+			</div>
+		</div>
 
-                    </div>
-                </div>
+		<div class="row">
+			<div class="col-md-8">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="d-flex justify-content-between align-items-center">
+							<div class="">
+								<h3 class="mt-4">{{ $video->title }}</h3>
+								<p class="gray-text">{{ $video->views }} views . {{ $video->uploaded_date }} </p>
+							</div>
+							<div class="">
+								<livewire:video.voting :video="$video" />
+							</div>
+						</div>
 
-                <hr>
-                <div class="row">
-                    <div class="col-md-12">
-                         <livewire:channel.channel-info :channel="$video->channel" />
-                    </div>
-                </div>
+					</div>
+				</div>
 
-             <hr>
+				<hr>
+				<div class="row">
+					<div class="col-md-12">
+						<livewire:channel.channel-info :channel="$video->channel" />
+					</div>
+				</div>
 
-              <h4>{{ $video->AllcommntsCount()}} Comments</h4>
-        @auth
-        <div class= "my-2">
-        <livewire:comment.new-comment :video="$video" :key="$video->id" />
-        </div>
-              
-        @endauth
+				<hr>
 
-          
-            <livewire:comment.all-comments :video="$video" />
-            </div>
-            <div class="col-md-4">
+				<h4>{{ $video->AllcommntsCount()}} Comments</h4>
+				@auth
+				<div class="my-2">
+					<livewire:comment.new-comment :video="$video" :key="$video->id" />
+				</div>
 
-            </div>
-        </div>
-    </div> --}}
+				@endauth
 
 
-    <!-- Start post-content Area -->
+				<livewire:comment.all-comments :video="$video" />
+			</div>
+			<div class="col-md-4">
+
+			</div>
+		</div>
+	</div> --}}
+
+
+	<!-- Start post-content Area -->
 	<section class="post-content-area single-post-area">
-		<div class="container">
+		<div class="container-fluid">
 			<div class="row">
-				<div class="col-lg-12 posts-list">
+				<div class="col-lg-8 posts-list">
 					<div class="single-post row">
 						<div class="col-lg-12">
 							<div class="feature-img">
-								<div class="video-container" wire:ignore> 
-                    
-                        <video id="yt-video" controls preload="auto"
-                            class="video-js vjs-fill vjs-styles=default vjs-big-play-centered" data-setup="{}"
-                            poster="{{ asset('videos/'. $video->uid . '/' . $video->thumbnail_image)}}">
-                            <source src="{{ asset('videos/'. $video->uid . '/' . $video->proccessed_file)}}"
-                                type="application/x-mpegURL">
-                            <p class="vjs-no-js">
-                                To view this video please enable JavaScript, and consider upgrading to a
-                                web browser that
-                                <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5
-                                    video</a>
-                            </p>
-                        </video>
-                            </div>
-                        </div>
-                    </div>
-                    
-                </div>
+								<div class="video-container" wire:ignore>
+									<video id="yt-video" controls preload="auto"
+										class="video-js vjs-fill vjs-styles=default vjs-big-play-centered"
+										data-setup="{}"
+										poster="{{ asset('videos/'. $video->uid . '/' . $video->thumbnail_image)}}">
+										<source src="{{ asset('videos/'. $video->uid . '/' . $video->proccessed_file)}}"
+											type="application/x-mpegURL">
+										<p class="vjs-no-js">
+											To view this video please enable JavaScript, and consider upgrading to a
+											web browser that
+											<a href="https://videojs.com/html5-video-support/" target="_blank">supports
+												HTML5
+												video</a>
+										</p>
+									</video>
+								</div>
+							</div>
+						</div>
 
-        <div class="row pt-0">
-            <div class="col-md-12">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="">
-                                <h3 class="mt-0">{{ $video->title }}</h3>
-                                <p class="gray-text">{{ number_format($video->views, 0, ',', ',') }} views . {{ $video->uploaded_date }} </p>
-                            </div>
-                            <div class="">
-                                <livewire:video.voting :video="$video" />
-                            </div>
-                        </div>
+					</div>
 
-                    </div>
-                </div>
+					<div class="row pt-0">
+						<div class="col-md-12">
+							<div class="row">
+								<div class="col-md-12">
+									<div class="d-flex justify-content-between align-items-center">
+										<div class="">
+											<h3 class="mt-0">{{ $video->title }}</h3>
+											<p class="gray-text">{{ number_format($video->views, 0, ',', ',') }} views .
+												{{ $video->uploaded_date }} </p>
+										</div>
+										<div class="">
+											<livewire:video.voting :video="$video" />
+										</div>
+									</div>
 
-                <hr>
-                <div class="row">
-                    <div class="col-md-12">
-                         <livewire:channel.channel-info :channel="$video->channel" />
-                    </div>
-                </div>
+								</div>
+							</div>
 
-             <hr>
+							<hr>
+							<div class="row">
+								<div class="col-md-12">
+									<livewire:channel.channel-info :channel="$video->channel" />
+								</div>
+							</div>
 
-                            <h4>{{ $video->AllcommntsCount()}} Comments</h4>
-                        @auth
-                        <div class= "my-2">
-                        <livewire:comment.new-comment :video="$video" :key="$video->id" />
-                        </div>
-                            
-                        @endauth
+							<hr>
 
-          
-            <livewire:comment.all-comments :video="$video" />
-            </div>
+							<h4>{{ $video->AllcommntsCount()}} Comments</h4>
+							@auth
+							<div class="my-2">
+								<livewire:comment.new-comment :video="$video" :key="$video->id" />
+							</div>
+
+							@endauth
 
 
+							<livewire:comment.all-comments :video="$video" />
+						</div>
 
-				</div>
-				<!-- <div class="col-lg-4 sidebar-widgets">
+
+
+					</div>
+					<!-- <div class="col-lg-4 sidebar-widgets">
 					<div class="widget-wrap">
 						<div class="single-sidebar-widget search-widget">
 							<form class="search-form" action="#">
@@ -308,26 +310,32 @@
 						</div>
 					</div>
 				</div> -->
+				</div>
+
+
+
+				<div class="col-4">
+					Riswan Ardinata
+				</div>
 			</div>
-		</div>
 	</section>
 	<!-- End post-content Area -->
 
-    @push('scripts')
-    <script src="https://vjs.zencdn.net/7.11.4/video.min.js"></script>
+	@push('scripts')
+	<script src="https://vjs.zencdn.net/7.11.4/video.min.js"></script>
 
-    <script>
-        var player = videojs('yt-video')
-        var countedAsView = false;
-        player.on('timeupdate', function() {
-            if (!countedAsView && this.currentTime() > 3) {
-                countedAsView = true;
-                // this.off('timeupdate') // No longer neccessary
-                Livewire.emit('VideoViewed')
-            }
-        })
+	<script>
+		var player = videojs('yt-video')
+		var countedAsView = false;
+		player.on('timeupdate', function () {
+			if (!countedAsView && this.currentTime() > 3) {
+				countedAsView = true;
+				// this.off('timeupdate') // No longer neccessary
+				Livewire.emit('VideoViewed')
+			}
+		})
 
-    </script>
+	</script>
 
-    @endpush
+	@endpush
 </div>

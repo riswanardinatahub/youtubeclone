@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Video;
 
 use App\Models\Video;
+use App\Models\Channel;
 use Livewire\Component;
 
 class WatchVideo extends Component
@@ -16,7 +17,8 @@ class WatchVideo extends Component
     }
     public function render()
     {
-        return view('livewire.video.watch-video')->extends('layouts.app');
+        $channels = Channel::get()->pluck('publicvideo');
+        return view('livewire.video.watch-video',\compact('channels'))->extends('layouts.app');
     }
 
     public function countView(){
