@@ -314,8 +314,149 @@
 
 
 
-				<div class="col-4">
-					Riswan Ardinata
+		<div class="col-4 justify-content-end">
+
+			<div class="row">
+
+				@foreach ($channels as $channelVideos)
+            @foreach ($channelVideos as $video)
+				<div class="col-lg-12 pb-30">
+					<div class="single-carusel row ">
+						<div class="col-7 thumb ">
+							<img class="img" src="{{asset( $video->thumbnail)}}" alt="">
+						</div>
+						<div class="detials col-5 ">
+							
+							<a href="{{ route('video.watch', $video)}}">
+								<h4>{{$video->title}}</h4>
+							</a>
+							<p class="mb-1"><b> {{ $video->channel->name }} </b></p>
+							<p>
+								Desa : {{ $video->village_name }}
+							</p>
+
+							@php
+                            $n =  $video->views ;
+                                if ($n >= 0 && $n < 1000) {
+                                    // 1 - 999
+                                    $n_format = floor($n);
+                                    $suffix = '';
+                                } else if ($n >= 1000 && $n < 1000000) {
+                                    // 1k-999k
+                                    $n_format = floor($n / 1000);
+                                    $suffix = 'K+';
+                                } else if ($n >= 1000000 && $n < 1000000000) {
+                                    // 1m-999m
+                                    $n_format = floor($n / 1000000);
+                                    $suffix = 'M+';
+                                } else if ($n >= 1000000000 && $n < 1000000000000) {
+                                    // 1b-999b
+                                    $n_format = floor($n / 1000000000);
+                                    $suffix = 'B+';
+                                } else if ($n >= 1000000000000) {
+                                    // 1t+
+                                    $n_format = floor($n / 1000000000000);
+                                    $suffix = 'T+';
+                                }
+
+	                                $cinta = !empty($n_format . $suffix) ? $n_format . $suffix : 0;
+                            @endphp
+                        
+							<p>
+								{{ $cinta }} views x . {{ $video->uploaded_date }}
+							</p>
+
+							<a href="{{ route('video.watch', $video)}}" class=" mt-3 genric-btn primary circle arrow small">Tonton<span class="lnr lnr-arrow-right"></span></a>
+
+							
+						</div>
+					</div>
+				</div>
+				
+  			@endforeach
+            @endforeach
+				{{-- <div class="col-lg-12 pb-30">
+					<div class="single-carusel row align-items-center">
+						<div class="col-12 col-md-6 thumb">
+							<img class="img-fluid" src="{{ asset('videos/test.png') }}" alt="">
+						</div>
+						<div class="detials col-6 col-md-6">
+							<p>25th February, 2018</p>
+							<a href="event-details.html">
+								<h4>The Universe Through
+									A Child S Eyes</h4>
+							</a>
+							<p>
+								For most of us, the idea of astronomy is something we directly connect to “stargazing”,
+								telescopes and seeing magnificent displays in the heavens.
+							</p>
+						</div>
+					</div>
+				</div> --}}
+			</div>
+				
+			{{-- @foreach ($channels as $channelVideos)
+            @foreach ($channelVideos as $video)
+
+            <div class="single-popular-carusel col-lg-12 col-md-12">
+                <div class="thumb-wrap relative">
+                    <div class="thumb relative rounded">
+                        <div class=""></div>
+                        <img class="img-fluid" src="{{asset( $video->thumbnail)}}" alt="">
+                    </div>
+                    <div class="meta d-flex justify-content-between">
+                        <p><span class="lnr lnr-users"></span> {{ $video->views }} <span
+                                class="lnr lnr-bubble"></span>{{ $video->AllcommntsCount()}}</p>
+                        <p class="px-2 rounded " style="background-color: rgb(74, 77, 77);">{{ $video->duration }}</p>
+                    </div>
+                </div>
+                <div class="details">
+                    <a href="{{ route('video.watch', $video)}}">
+
+                        <h4 class="mb-0">
+                            <img class="rounded-circle" src="{{ $video->channel->picture }}" alt=""
+                                style="height: 40px; margin-right: 10px;">
+                            {{$video->title}}
+                        </h4>
+                    </a>
+                    <small>
+                        {{ $video->channel->name }}  <br>
+                        Desa : {{ $video->village_name }}
+                        <br>
+                             @php
+                            $n =  $video->views ;
+                                if ($n >= 0 && $n < 1000) {
+                                    // 1 - 999
+                                    $n_format = floor($n);
+                                    $suffix = '';
+                                } else if ($n >= 1000 && $n < 1000000) {
+                                    // 1k-999k
+                                    $n_format = floor($n / 1000);
+                                    $suffix = 'K+';
+                                } else if ($n >= 1000000 && $n < 1000000000) {
+                                    // 1m-999m
+                                    $n_format = floor($n / 1000000);
+                                    $suffix = 'M+';
+                                } else if ($n >= 1000000000 && $n < 1000000000000) {
+                                    // 1b-999b
+                                    $n_format = floor($n / 1000000000);
+                                    $suffix = 'B+';
+                                } else if ($n >= 1000000000000) {
+                                    // 1t+
+                                    $n_format = floor($n / 1000000000000);
+                                    $suffix = 'T+';
+                                }
+
+	                                $cinta = !empty($n_format . $suffix) ? $n_format . $suffix : 0;
+                            @endphp
+                        {{ $cinta }} Views . {{ $video->uploaded_date }} 
+                    </small>
+
+                </div>
+            </div>
+
+            @endforeach
+            @endforeach --}}
 				</div>
 			</div>
 	</section>

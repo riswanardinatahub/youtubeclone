@@ -17,7 +17,7 @@ class WatchVideo extends Component
     }
     public function render()
     {
-        $channels = Channel::get()->pluck('publicvideo');
+        $channels = Channel::inRandomOrder()->get()->pluck('publicvideo');
         return view('livewire.video.watch-video',\compact('channels'))->extends('layouts.app');
     }
 
