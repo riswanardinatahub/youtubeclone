@@ -12,7 +12,7 @@ class ChannelPolicy
 
     public function edit(User $user, Channel $channel){
 
-        return $user->id === $channel->user_id;
+        return $user->id == $channel->user_id;
 
     }
 }
