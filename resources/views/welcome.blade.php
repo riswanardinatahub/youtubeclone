@@ -54,8 +54,8 @@
         <div class="row d-flex justify-content-center">
             <div class="menu-content pb-70 col-lg-8">
                 <div class="title text-center">
-                    <h1 class="mb-10">Desatube Desa Bocil</h1>
-                    <p>There is a moment in the life of any aspiring.</p>
+                    <h1 class="mb-10">Desatube</h1>
+                    <p>Kembangkan Desa-Desamu Agar Lebih Maju Dan terkenal</p>
                     <div class="widget-wrap border-0 p-0" style="background-color: white;">
                         <div class="single-sidebar-widget search-widget">
                             <form class="search-form" action="/search" method="GET">

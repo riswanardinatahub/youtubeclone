@@ -55,7 +55,7 @@
             <div class="menu-content pb-7 col-lg-8">
                 <div class="title text-center">
                     <h1 class="mb-10">Tranding Videos</h1>
-                    <p>There is a moment in the life of any aspiring.</p>
+                    <p>Berikut merupakan video yang paling banyak di tonton</p>
                 </div>
             </div>
         </div>
