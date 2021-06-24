@@ -32,7 +32,7 @@ class Channel extends Model
 
      public function videos()
     {
-        return $this->hasMany(Video::class);
+        return $this->hasMany(Video::class)->latest();
     }
 
     public function subscriptions()

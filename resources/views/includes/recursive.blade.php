@@ -1,7 +1,7 @@
 @foreach ($comments as $comment )
 <div class="media my-3" x-data="{open:false, openReply:false}">
     <img class="mr-3 img-fluid img-thumbnail rounded-circle" style="width: 80px;"
-        src="{{  $comment->user->channel->picture }}">
+        src="{{  $comment->user->channel->images_url }}">
     <div class="media-body">
         <h5 class="mt-0">{{ $comment->user->name}}
             <small class="text-muted"> {{ $comment->created_at->diffForHumans() }} </small>

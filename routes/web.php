@@ -30,7 +30,7 @@ Route::get('/', function () {
     //     $channels = Auth::user()->subscribedChannels()->with('videos')->get()->pluck('videos');
         
     // }else{
-        $channels = Channel::get()->pluck('publicvideo');
+        $channels = Channel::latest()->get()->pluck('publicvideo');
     // }
 
     return view('welcome', compact('channels'));

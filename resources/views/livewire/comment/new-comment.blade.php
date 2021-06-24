@@ -1,6 +1,6 @@
 <div>
     <div class="d-flex align-items-center">
-        <img src="{{ auth()->user()->channel->picture }}" alt="" class="rounded-img pr-3" style="height: 40px;">
+        <img src="{{ auth()->user()->channel->images_url }}" alt="" class="rounded-img pr-3" style="height: 40px;">
 
 
         <input type="text" wire:model="body" class="my-2 comment-form-control" placeholder="Add a public Commnet">

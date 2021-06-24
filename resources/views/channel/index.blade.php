@@ -27,7 +27,7 @@
 <div class="container mt-3">
     <div class="d-flex justify-content-between align-items-center">
         <div class="d-flex align-items-center">
-            <img src="{{ $channel->picture}}" class="rounded-circle mr-3" height="100px;">
+            <img src="{{ $channel->images_url}}" class="rounded-circle mr-3" height="100px;">
             <div>
                 <h3 class="pt-3">{{$channel->name}}</h3>
                 <p class="pt-2">{{ $channel->subscribers() }} Subscribers</p>
@@ -86,7 +86,7 @@
                     <a href="{{ route('video.watch', $video)}}">
 
                         <h4 class="mb-0">
-                            <img class="rounded-circle" src="{{ $video->channel->picture }}" alt=""
+                            <img class="rounded-circle" src="{{ $video->channel->images_url }}" alt=""
                                 style="height: 40px; margin-right: 10px;">
                             {{$video->title}}
                         </h4>
