@@ -27,7 +27,7 @@ class Channel extends Model
         return '/images/' . $this->images;
 
         }else{
-        return '/images/' . 'channel-default.png';
+        return '/foto/' . 'channel-default.png';
 
         }
         
