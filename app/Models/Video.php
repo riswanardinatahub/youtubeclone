@@ -5,12 +5,14 @@ namespace App\Models;
 use Illuminate\Support\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Storage;
 
 class Video extends Model
 {
     use HasFactory;
 
     protected $guarded = [];
+    protected $appends = ['thumbnail'];
 
     public function getRouteKeyName(){
         return 'uid';
@@ -19,10 +21,11 @@ class Video extends Model
     public function getThumbnailAttribute(){
 
         if($this->thumbnail_image){
-        return '/videos/' . $this->uid . '/' . $this->thumbnail_image;
+            // return env('APP_URL') . Storage::url('videos/' . $this->uid . '/' . $this->thumbnail_image);
+            return '/storage/videos/' . $this->uid . '/' . $this->thumbnail_image;
 
         }else{
-        return '/videos/' . 'default.png';
+        return '/videos/' . 'default.png'; // ini nanti tambahin gambar tapi jangandi storage okey
 
         }
         
