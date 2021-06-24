@@ -88,7 +88,7 @@
                     <a href="{{ route('video.watch', $video)}}">
 
                         <h4 class="mb-0">
-                            <img class="rounded-circle" src="{{ $video->channel->picture }}" alt=""
+                            <img class="rounded-circle" src="{{ $video->channel->images_url }}" alt=""
                                 style="height: 40px; margin-right: 10px;">
                             {{$video->title}}
                         </h4>

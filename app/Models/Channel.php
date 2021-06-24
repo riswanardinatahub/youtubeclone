@@ -10,6 +10,7 @@ class Channel extends Model
     use HasFactory;
 
     protected $guarded = [];
+    protected $appends = ['images_url']; // ini nanti diambilnya $channel->image_url, tapi ini asalnya dari accessor
 
     public function getRouteKeyName(){
         return 'slug';
@@ -21,16 +22,8 @@ class Channel extends Model
 
     }
 
-     public function getPictureAttribute(){
-
-        if($this->images){
-        return '/images/' . $this->images;
-
-        }else{
-        return '/foto/' . 'channel-default.png';
-
-        }
-        
+     public function getImagesUrlAttribute() {
+        return $this->images ? '/storage/images/' . $this->images : '/foto/channel-default.png';
     }
     public function publicvideo()
     {

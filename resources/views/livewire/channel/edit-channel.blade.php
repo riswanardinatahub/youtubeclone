@@ -1,6 +1,6 @@
 <div class="px-5">
     @if($channel->images)
-    <img src="{{ asset('images' . '/' . $channel->images)}}" alt="">
+    <img src="{{ $channel->images_url }}" alt="">
     @endif
     <form wire:submit.prevent="update">
 
