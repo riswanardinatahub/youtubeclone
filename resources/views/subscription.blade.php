@@ -28,7 +28,7 @@
 
                     <div class="card-body">
                         <div class="d-flex align-items-center">
-                            <img src="{{  $video->channel->picture }}" height="40px" class="rounded circle">
+                            <img src="{{  $video->channel->images_url }}" height="40px" class="rounded circle">
 
                             <h4 class="ml-3">{{$video->title}}</h4>
 
@@ -64,7 +64,7 @@
                     
                         <div class="col-2" style="margin-right: 0%; max-width: 10.66667%; padding-left: 0%; padding-right: 0%;">
                              <a href="{{ route('channel.index', ['channel' => $video->channel]) }}" class="text-center">
-                               <img class="rounded-circle" src="{{ $video->channel->picture }}" alt="" style="height: 40px;">
+                               <img class="rounded-circle" src="{{ $video->channel->images_url }}" alt="" style="height: 40px;">
                                     
                                      <p class="text-muted" style="font-size:10px;">{{ $video->channel->name }} </p> 
                                  </a>
@@ -89,6 +89,7 @@
                         <div class="overlay overlay-bg"></div>
                         <img class="img-fluid" src="{{asset( $video->thumbnail)}}" alt="">
                     </div>
+                  
                     <div class="meta d-flex justify-content-between">
                         <p><span class="lnr lnr-users"></span> {{ $video->views }} <span
                                 class="lnr lnr-bubble"></span>{{ $video->AllcommntsCount()}}</p>
@@ -99,7 +100,7 @@
                     <a href="{{ route('video.watch', $video)}}">
 
                         <h4 class="mb-0">
-                            <img class="rounded-circle" src="{{ $video->channel->picture }}" alt=""
+                            <img class="rounded-circle" src="{{ $video->channel->images_url }}" alt=""
                                 style="height: 40px; margin-right: 10px;">
                             {{$video->title}}
                         </h4>

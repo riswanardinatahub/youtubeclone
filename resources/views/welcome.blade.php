@@ -69,8 +69,8 @@
             </div>
         </div>
         <div class="row">
-            @foreach ($channels as $channelVideos)
-            @foreach ($channelVideos as $video)
+            {{-- @foreach ($channels as $channelVideos) --}}
+            @foreach ($channels as $video)
 
             <div class="single-popular-carusel col-lg-3 col-md-6">
                 <div class="thumb-wrap relative">
@@ -130,7 +130,7 @@
             </div>
 
             @endforeach
-            @endforeach
+            {{-- @endforeach --}}
         </div>
 
 

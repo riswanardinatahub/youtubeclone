@@ -19,7 +19,7 @@
                             <p class="text-gray font-weight-bold">{{ $video->views}} views •
                                 {{$video->created_at->diffForHumans()}}</p>
                             <div class="d-flex align-items-center">
-                                <img src="{{$video->channel->picture}}" class="rounded circle">
+                                <img src="{{$video->channel->images_url}}" class="rounded circle">
                                 <p class="text-gray font-weight-bold">
                                     {{ $video->channel->name}}
                                 </p>
@@ -80,7 +80,7 @@
                     <a href="{{ route('video.watch', $video)}}">
 
                         <h4 class="mb-0">
-                            <img class="rounded-circle" src="{{ $video->channel->picture }}" alt=""
+                            <img class="rounded-circle" src="{{ $video->channel->images_url }}" alt=""
                                 style="height: 40px; margin-right: 10px;">
                             {{$video->title}}
                         </h4>

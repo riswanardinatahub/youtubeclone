@@ -30,7 +30,11 @@ Route::get('/', function () {
     //     $channels = Auth::user()->subscribedChannels()->with('videos')->get()->pluck('videos');
         
     // }else{
-        $channels = Channel::latest()->get()->pluck('publicvideo');
+        //$channels = Channel::latest()->get()->pluck('publicvideo');
+
+
+        $channels = Video::where('visibility','public')->latest()->get();
+       // dd($data);
     // }
 
     return view('welcome', compact('channels'));
@@ -77,7 +81,7 @@ Route::get('/subscriptions', function () {
 
     if(Auth::check()){
     // $channels = Auth::user()->subscribedChannels()->with('videos')->get()->pluck('videos');
-    $channels = Auth::user()->subscribedChannels()->with('publicvideo')->get()->pluck('publicvideo');
+    $channels = Auth::user()->subscribedChannels()->with('publicvideo')->latest()->get()->pluck('publicvideo');
 
     //dd($channels);
     }else{

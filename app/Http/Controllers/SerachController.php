@@ -15,6 +15,7 @@ class SerachController extends Controller
             ->where('title', 'LIKE', "%{$q}%")
             ->orWhere('description', 'LIKE', "%{$q}%")
             ->orWhere('village_name', 'LIKE', "%{$q}%")
+            ->OrderBy('id','DESC')
             ->get();
         }else{
             $videos = [];
