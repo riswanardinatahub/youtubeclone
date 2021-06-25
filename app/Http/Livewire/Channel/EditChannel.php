@@ -36,6 +36,7 @@ class EditChannel extends Component
     }
 
     public function update(){
+       // dd($this->images);
         $this->authorize('edit', $this->channel);
 
         $this->validate();
