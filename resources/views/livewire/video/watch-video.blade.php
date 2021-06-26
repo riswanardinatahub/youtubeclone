@@ -106,7 +106,9 @@
 											<p class="gray-text">{{ number_format($video->views, 0, ',', ',') }} views .
 												{{ $video->uploaded_date }} </p>
 										</div>
+										
 										<div class="">
+										
 											<livewire:video.voting :video="$video" />
 										</div>
 									</div>

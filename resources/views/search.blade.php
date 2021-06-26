@@ -48,13 +48,13 @@
         <div class="row d-flex justify-content-center">
             <div class="menu-content pb-70 col-lg-8">
                 <div class="title text-center">
-                    <h1 class="mb-10">Desatube Desa Bocil</h1>
-                    <p>There is a moment in the life of any aspiring.</p>
+                    <h1 class="mb-10">Desatube</h1>
+                    <p>Jadikan desamu lebih mernarik lagi </p>
                     <div class="widget-wrap border-0 p-0" style="background-color: white;">
                         <div class="single-sidebar-widget search-widget">
                             <form class="search-form" action="/search" method="GET">
-                                <input placeholder="Search Posts" name="query" id="query" type="text" required
-                                    onfocus="this.placeholder = ''" onblur="this.placeholder = 'Search Posts'">
+                                <input placeholder="Search By Desa" name="query" id="query" type="text" required
+                                    onfocus="this.placeholder = ''" onblur="this.placeholder = 'Search By Desa'">
                                 <button type="submit"><i class="fa fa-search"></i></button>
                             </form>
                         </div>

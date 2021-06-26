@@ -59,8 +59,8 @@
                     <div class="widget-wrap border-0 p-0" style="background-color: white;">
                         <div class="single-sidebar-widget search-widget">
                             <form class="search-form" action="/search" method="GET">
-                                <input placeholder="Search Posts" name="query" id="query" type="text"
-                                    onfocus="this.placeholder = ''" onblur="this.placeholder = 'Search Posts'">
+                                <input placeholder="Search By Desa" name="query" id="query" type="text"
+                                    onfocus="this.placeholder = ''" onblur="this.placeholder = 'Search By Desa'">
                                 <button type="submit"><i class="fa fa-search"></i></button>
                             </form>
                         </div>
