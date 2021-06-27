@@ -52,16 +52,6 @@ return [
         'videos' => [
             'driver' => 'local',
             'root' => storage_path('app/videos'),
-            'permissions' => [
-                                'file' => [
-                                    'public' => 0776,
-                                    'private' => 0776,
-                                ],
-                                'dir' => [
-                                    'public' => 0776,
-                                    'private' => 0776,
-                                ],
-                            ],
             'url' => env('APP_URL'),
             'visibility' => 'public',
         ],
