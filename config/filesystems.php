@@ -45,21 +45,21 @@ return [
         'videos-temp' => [
             'driver' => 'local',
             'root' => storage_path('app/videos-temp'),
-            'url' => env('APP_URL').'/storage',
-            'visibility' => 'public',
+            // 'url' => env('APP_URL').'/storage',
+            // 'visibility' => 'private',
         ],
 
         'videos' => [
             'driver' => 'local',
             'root' => storage_path('app/videos'),
-            'url' => env('APP_URL').'/storage',
+            'url' => env('APP_URL'),
             'visibility' => 'public',
         ],
 
         'images' => [
             'driver' => 'local',
             'root' => storage_path('app/images'),
-            'url' => env('APP_URL').'/storage',
+            'url' => env('APP_URL'),
             'visibility' => 'public',
         ],
 

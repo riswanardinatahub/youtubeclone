@@ -79,8 +79,8 @@
 									<video id="yt-video" controls preload="auto"
 										class="video-js vjs-fill vjs-styles=default vjs-big-play-centered"
 										data-setup="{}"
-										poster="{{ asset('storage/videos/'. $video->uid . '/' . $video->thumbnail_image)}}">
-										<source src="{{ asset('storage/videos/'. $video->uid . '/' . $video->proccessed_file)}}"
+										poster="{{ asset('videos/'. $video->uid . '/' . $video->thumbnail_image)}}">
+										<source src="{{ asset('videos/'. $video->uid . '/' . $video->proccessed_file)}}"
 											type="application/x-mpegURL">
 										<p class="vjs-no-js">
 											To view this video please enable JavaScript, and consider upgrading to a
