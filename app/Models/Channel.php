@@ -23,7 +23,7 @@ class Channel extends Model
     }
 
      public function getImagesUrlAttribute() {
-        return $this->images ? '/storage/images/' . $this->images : '/foto/channel-default.png';
+        return $this->images ? '/images/' . $this->images : '/foto/channel-default.png';
     }
     public function publicvideo()
     {

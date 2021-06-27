@@ -22,7 +22,7 @@ class Video extends Model
 
         if($this->thumbnail_image){
             // return env('APP_URL') . Storage::url('videos/' . $this->uid . '/' . $this->thumbnail_image);
-            return '/storage/videos/' . $this->uid . '/' . $this->thumbnail_image;
+            return '/videos/' . $this->uid . '/' . $this->thumbnail_image;
 
         }else{
         return '/videos/' . 'default.png'; // ini nanti tambahin gambar tapi jangandi storage okey
