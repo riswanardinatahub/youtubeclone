@@ -54,12 +54,12 @@ return [
             'root' => storage_path('app/videos'),
             'permissions' => [
                                 'file' => [
-                                    'public' => 0664,
-                                    'private' => 0600,
+                                    'public' => 0776,
+                                    'private' => 0776,
                                 ],
                                 'dir' => [
-                                    'public' => 0775,
-                                    'private' => 0700,
+                                    'public' => 0776,
+                                    'private' => 0776,
                                 ],
                             ],
             'url' => env('APP_URL'),
