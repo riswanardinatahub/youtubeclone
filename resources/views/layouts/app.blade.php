@@ -221,6 +221,10 @@
 						
 							<li class="nav-item"><a  href="{{ route('logout') }}" onclick="event.preventDefault();
                                         document.getElementById('logout-form').submit();">Logout</a></li>
+
+										 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
 							@else
 							
 								
