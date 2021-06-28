@@ -203,10 +203,32 @@
 						<li><a href="/">Home</a></li>
 						<li><a href="/tranding">Trending</a></li>
 						@auth
+						@if (Auth::user()->role =='user')
 							<li><a href="/subscriptions">Subscriptions</a></li>
+						@endif
+							
 						@else
 							<li><a href="/login">Subscriptions</a></li>
 						@endauth
+
+						@auth
+							@if (Auth::user()->role =='admin')
+
+							<li><a href="/datauser">Data User</a></li>
+							<li><a href="/datalaporan">Data Laporan</a></li>
+							<li><a href="#">{{ Auth::user()->name }}</a></li>
+
+						
+							<li class="nav-item"><a  href="{{ route('logout') }}" onclick="event.preventDefault();
+                                        document.getElementById('logout-form').submit();">Logout</a></li>
+							@else
+							
+								
+							@endif
+						@endauth
+
+
+
 						
                         @guest
                          @if (Route::has('login'))
@@ -216,6 +238,8 @@
 						<li><a href="/register">Register</a></li>
                         @endif
                         @else
+
+						@if (Auth::user()->role=='user')
 						<li class="nav-item">
                             <a href="{{ route('video.create', ['channel' => Auth::user()->channel]) }}" class="nav-link">
                                 <span class="material-icons">
@@ -223,6 +247,7 @@
                                 </span>
                             </a>
                         </li>
+
 						<li class="menu-has-children"><a href="">{{ Auth::user()->name }}</a>
 							<ul>
 								<li><a href="{{ route('channel.index', ['channel' => Auth::user()->channel]) }}">My Channel</a></li>
@@ -239,6 +264,10 @@
 								
 							</ul>
 						</li>
+						
+						@endif
+						
+						
                         @endguest
 					</ul>
 				</nav><!-- #nav-menu-container -->

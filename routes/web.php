@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Models\Video;
 use App\Models\Channel;
 use Illuminate\Support\Carbon;
@@ -57,6 +58,18 @@ Route::middleware('auth')->group( function(){
 
     //Update Password
     Route::post('/updatepassword', [UserController::class, 'updatepassword'])->name('updatepassword'); 
+
+    Route::get('/datauser', [AdminController::class, 'datauser'])->name('datauser');
+    Route::get('/deleteuser/{id}',[AdminController::class, 'deleteuser'])->name('deleteuser');
+
+    Route::get('/datalaporan', [AdminController::class, 'datalaporan'])->name('datalaporan');
+
+    //laporan
+    Route::post('/report', [AdminController::class, 'report'])->name('report');
+    Route::get('/tolakreport/{id}', [AdminController::class, 'tolakreport'])->name('tolakreport');
+    Route::get('/videodelete/{id}', [AdminController::class, 'videodelete'])->name('videodelete');
+
+
 });
 
 

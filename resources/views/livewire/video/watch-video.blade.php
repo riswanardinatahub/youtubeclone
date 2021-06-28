@@ -1,5 +1,6 @@
 <div>
 	@push('custom-css')
+	<script src="https://kit.fontawesome.com/58cfd4d2e0.js" crossorigin="anonymous"></script>
 	<link href="https://vjs.zencdn.net/7.11.4/video-js.css" rel="stylesheet" />
 	@endpush
 	{{-- <div class="container-fluid">
@@ -108,8 +109,9 @@
 										</div>
 										
 										<div class="">
-										
+											
 											<livewire:video.voting :video="$video" />
+											
 										</div>
 									</div>
 
@@ -479,6 +481,45 @@
 		})
 
 	</script>
+
+	 <script type="text/javascript">
+    
+    // Social Share links.
+    const gmailBtn = document.getElementById('gmail-btn');
+    const facebookBtn = document.getElementById('facebook-btn');
+    const gplusBtn = document.getElementById('gplus-btn');
+    const linkedinBtn = document.getElementById('linkedin-btn');
+    const twitterBtn = document.getElementById('twitter-btn');
+    const whatsappBtn = document.getElementById('whatsapp-btn');
+    const socialLinks = document.getElementById('social-links');
+    // posturl posttitle
+    let postUrl = encodeURI(document.location.href);
+    let postTitle = encodeURI('');
+    facebookBtn.setAttribute("href",`https://www.facebook.com/sharer.php?u=${postUrl}`);
+    twitterBtn.setAttribute("href", `https://twitter.com/share?url=${postUrl}&text=${postTitle}`);
+    linkedinBtn.setAttribute("href", `https://www.linkedin.com/shareArticle?url=${postUrl}&title=${postTitle}`);
+    whatsappBtn.setAttribute("href",`https://wa.me/?text=${postTitle} ${postUrl}`);
+    gmailBtn.setAttribute("href",`https://mail.google.com/mail/?view=cm&su=${postTitle}&body=${postUrl}`);
+    gplusBtn.setAttribute("href",`https://plus.google.com/share?url=${postUrl}`);
+    
+    // Button
+    const shareBtn = document.getElementById('shareBtn');
+    if(navigator.share){
+      shareBtn.style.display = 'block';
+      socialLinks.style.display = 'block';
+      shareBtn.addEventListener('click', ()=>{
+        navigator.share({
+          title: postTitle,
+          url:postUrl
+        }).then((result) => {
+          alert('Thank You for Sharing.')
+        }).catch((err) => {
+          console.log(err);
+        });;
+      });
+    }else{
+    }
+ </script>
 
 	@endpush
 </div>
