@@ -49,10 +49,8 @@ class AdminController extends Controller
 
 
      public function videodelete($id){
-       
         $data = Video::find($id);
         Report::where('videos_id',$id)->delete();
-        //dd($data);
         $data->delete();
         return redirect()->route('datalaporan');
     }
