@@ -52,7 +52,6 @@
                         <select wire:model="video.visibility" class="form-control">
                             <option value="private">private</option>
                             <option value="public">public</option>
-                            <option value="unlisted">unlisted</option>
                         </select>
                     </div>
 
