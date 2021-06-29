@@ -2,11 +2,14 @@
     <div class="d-flex text-muted">
      <div class="d-flex align-items-center">
            {{-- {{ $video->title }} --}}
-          @if (Auth::user()->role == 'admin')
+           @auth
+              @if (Auth::user()->role == 'admin')
 
           <a href="#" class="btn btn-danger deletevideo" data-id="{{ $video->id }}">DELETE VIDEO</a>
               
           @endif
+           @endauth
+        
            <span class=" material-icons  text-primary  text-muted"  type="button" data-toggle="modal" data-target="#reportmodal"
                 style="font-size:2rem; cursor: pointer;" >
                 report
@@ -39,7 +42,10 @@
           <div class="form-group">
 
           <input hidden name="videos_id" value="{{ $video->id }}">
-          <input hidden name="user_id" value="{{ Auth::user()->id }}">
+          @auth
+             <input hidden name="user_id" value="{{ Auth::user()->id }}">
+          @endauth
+         
           
             <label for="exampleFormControlTextarea1">Masukkan Detail Report</label>
             <textarea name="text" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
