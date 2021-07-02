@@ -50,9 +50,9 @@
 
 <!-- Start popular-courses Area -->
 <section class="popular-courses-area section-gap courses-page">
-    <div class="container">
+    <div class="container-fluid">
         <div class="row d-flex justify-content-center">
-            <div class="menu-content pb-7 col-lg-8">
+            <div class="menu-content pb-7 col-lg-4">
                 <div class="title text-center">
                     <h1 class="mb-10">Trending Videos</h1>
                     <p>Berikut merupakan video yang paling banyak di tonton</p>
@@ -62,9 +62,10 @@
         @php
         $no = 1;
         @endphp
-        @foreach ($videos->unique('channel_id') as $video)
+        
         <div class="row justify-content-center">
-            <div class="single-popular-carusel col-lg-6 col-md-9">
+        @foreach ($videos->unique('channel_id') as $video)
+            <div class="single-popular-carusel col-lg-3 col-md-3">
                 <div class="thumb-wrap relative">
                     <div class="thumb relative rounded">
                         <div class="overlay overlay-bg"></div>
@@ -123,11 +124,9 @@
 
                 </div>
             </div>
-
-
-
+            @endforeach
         </div>
-        @endforeach
+        
 
 
 
