@@ -171,7 +171,7 @@
 </head>
 
 <body>
-	<header id="header" id="home" style="background-color: rgb(3, 3, 43);">
+	<header id="header" id="home" style="background-color: white; box-shadow: 0 5px 5px -2px rgba(0, 0, 0, 0.2);" >
 		{{-- <div class="header-top">
 			<div class="container">
 				<div class="row">

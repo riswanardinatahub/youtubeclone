@@ -1721,7 +1721,8 @@ h6 {
 .main-menu {
     padding-bottom: 20px;
     padding-top: 20px;
-    border-bottom: 1px solid #39353e;
+
+    /* border-bottom: 1px solid #39353e; */
 }
 #header {
     position: fixed;
@@ -1823,14 +1824,14 @@ h6 {
     padding: 0 8px 0px 8px;
     text-decoration: none;
     display: inline-block;
-    color: #fff;
+    color: rgb(12, 12, 12);
     font-weight: 500;
     font-size: 12px;
     text-transform: uppercase;
     outline: none;
 }
 .nav-menu li:hover > a {
-    color: #f7631b;
+    color: #358f66;
 }
 .nav-menu > li {
     margin-left: 10px;
@@ -2529,7 +2530,7 @@ body.mobile-nav-active #mobile-nav-toggle {
     background: rgba(4, 9, 30, 0.2);
 }
 .cta-two-area {
-    background: #f7631b;
+    background: #358f66;
     padding: 90px 0px;
 }
 .cta-two-area .cta-left {
@@ -3500,7 +3501,7 @@ dl.toggle.time-line:before {
     width: 80%;
     border-bottom-left-radius: 20px;
     border-top-left-radius: 20px;
-    background: #f7631b;
+    background: #358f66;
 }
 .widget-wrap .search-widget ::-webkit-input-placeholder {
     color: #fff;
@@ -3518,7 +3519,7 @@ dl.toggle.time-line:before {
     float: left;
     width: 20%;
     padding: 10px;
-    background: #f7631b;
+    background: #358f66;
     color: #fff;
     font-size: 17px;
     border: none;
