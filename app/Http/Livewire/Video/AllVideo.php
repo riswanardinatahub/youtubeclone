@@ -48,7 +48,9 @@ class AllVideo extends Component
 
        
         //delete folder
-        $deleted =Storage::disk('videos')->deleteDirectory($data->uid);
+        //$deleted =Storage::disk('videos')->deleteDirectory($data->uid);
+
+        $deleted = 'ya';
 
         if($deleted){
             $data->delete();
