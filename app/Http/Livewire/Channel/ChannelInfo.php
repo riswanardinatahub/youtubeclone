@@ -2,10 +2,11 @@
 
 namespace App\Http\Livewire\Channel;
 
-use auth;
+
 use App\Models\Channel;
 use Livewire\Component;
 use App\Models\Subscription;
+use Illuminate\Support\Facades\Auth;
 
 class ChannelInfo extends Component
 {
