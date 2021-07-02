@@ -44,7 +44,7 @@ class AllVideo extends Component
         $data = Video::find($this->deleteId);
         //dd($data);
         //cek allow user delete video
-       // $this->authorize('delete', $data);
+        $this->authorize('delete', $data);
 
        
         //delete folder
