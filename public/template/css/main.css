@@ -4027,10 +4027,10 @@ dl.toggle.time-line:before {
     margin-right: 30px;
 }
 .footer-area {
-    background-color: #04091e;
+    background-color: #ffffff;
 }
 .single-footer-widget h4 {
-    color: #fff;
+    color: #358f66;
     margin-bottom: 25px;
     font-weight: 500;
 }
@@ -4038,7 +4038,7 @@ dl.toggle.time-line:before {
     border: none;
     width: 80% !important;
     font-weight: 300;
-    background: #f9f9ff;
+    background: #ffffff;
     padding-left: 20px;
     border-radius: 0;
     font-size: 14px;
