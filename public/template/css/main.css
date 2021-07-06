@@ -1864,7 +1864,7 @@ h6 {
     position: fixed;
     right: 15px;
     z-index: 999;
-    top: 62px;
+    top: 25px;
     border: 0;
     background: none;
     font-size: 24px;
@@ -1874,7 +1874,7 @@ h6 {
     cursor: pointer;
 }
 #mobile-nav-toggle i {
-    color: #fff;
+    color: #358f66;
     font-weight: 900;
 }
 @media (max-width: 960px) {
@@ -1958,7 +1958,7 @@ body.mobile-nav-active #mobile-nav {
     left: 0;
 }
 body.mobile-nav-active #mobile-nav-toggle {
-    color: #fff;
+    color: rgb(0, 0, 0);
 }
 .section-gap {
     padding: 120px 0;
