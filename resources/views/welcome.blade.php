@@ -68,11 +68,74 @@
                 </div>
             </div>
         </div>
+
         <div class="row">
+            <div class="col-3">
+                 <div class="row justify-content-center">
+                        <div class="card border-0" style="width: 290px; box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);">
+                            @php
+                            $infrastruktur = 'https://desaku-desatour.masuk.id/api/infrastruktur';
+                                $konteninfrastruktur = @file_get_contents($infrastruktur);
+                                if($konteninfrastruktur === FALSE){
+                                    //data error
+                                    $datainfrastruktur =[];
+                                }else{
+                                        $datainfrastruktur = json_decode($konteninfrastruktur, true);
+                                }
+                        
+                            @endphp
+                            <div class="pl-4 pt-4" style=" font-size: 15px; font-weight: bold; background-color:white; color:black;">
+                                INFRASTRUKTUR DESA
+                                <div class="row">
+                                    <div class="col-3">
+                                        <hr style="padding-left: 0px; border-top: 3px solid #358f66; width:50px;">
+                                    </div>
+                                </div>
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                @php
+                                $no = 1;
+                                @endphp
+                                @foreach($datainfrastruktur['data'] as $row)
+                                @php
+                                $no++;
+                                @endphp
+                                <li class="list-group-item">
+                                    <img src="{{ $row['foto'] }}"
+                                        style="width: 100%; height: 75px; object-fit: cover;" alt="">
+                                    <a href="" target="_blank"
+                                        class="text-decoration-none text-dark" style="font-weight: bolder; font-size: 14px;">{{ $row['nama'] }}</a>
+                                    <br>
+                                    <div class="row">
+                        
+                                        <div class="col">
+                                            <span  style="font-size:12px;">
+                                                {{ $row['desa'] }} <span style="background-color:#358f66; color: white;">{{ $row['Status'] }}</span>
+                                            </span>
+                                        </div>
+                                        {{-- <div class="col">
+                                            <span class="text-success" style="font-size:10px;">
+                                                {{ \Carbon\Carbon::parse($row['created_at'])->format('D m Y') }}
+                                            </span>
+                                        </div> --}}
+                                    </div>
+                                </li>
+                                @if ($no == 5)
+                                @break
+                                @endif
+                                @endforeach
+                        
+                        
+                            </ul>
+                        </div>
+                   </div>
+            </div>
+            <div class="col-6">
+                     <div class="row">
             {{-- @foreach ($channels as $channelVideos) --}}
             @foreach ($channels as $video)
 
-            <div class="single-popular-carusel col-lg-3 col-md-6">
+            <div class="single-popular-carusel col-6">
                 <div class="thumb-wrap relative">
                     <div class="thumb relative rounded">
                         <div class="overlay overlay-bg"></div>
@@ -132,6 +195,73 @@
             @endforeach
             {{-- @endforeach --}}
         </div>
+            </div>
+            <div class="col-3">
+                <div class="row justify-content-center">
+                        <div class="card border-0" style="width: 290px; box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);">
+                            @php
+                            $sumberberita = 'https://desaku-desanews.masuk.id/api/berita/';
+                            $kontenberita = @file_get_contents($sumberberita);
+                            if($kontenberita === FALSE){
+                            //data error
+                            $databerita =[];
+                            }else{
+                            $databerita = json_decode($kontenberita, true);
+                            }
+                        
+                            @endphp
+                            <div class="pl-4 pt-4" style=" font-size: 15px; font-weight: bold; background-color:white; color:black;">
+                                BERITA DESA TERBARU
+                                <div class="row">
+                                    <div class="col-3">
+                                        <hr style="padding-left: 0px; border-top: 3px solid #358f66; width:50px;">
+                                    </div>
+                                </div>
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                @php
+                                $no = 1;
+                                @endphp
+                                @foreach($databerita as $row)
+                                @php
+                                $no++;
+                                @endphp
+                                <li class="list-group-item">
+                                    <img src="https://desaku-desanews.masuk.id/{{ $row['gambar'] }}"
+                                        style="width: 100%; height: 75px; object-fit: cover;" alt="">
+                                    <a href="https://desaku-desanews.masuk.id/berita/{{ $row['id'] }}/{{ $row['slug'] }}" target="_blank"
+                                        class="text-decoration-none text-dark" style="font-weight: bolder; font-size: 14px;">{{ $row['judul'] }}</a>
+                                    <br>
+                                    <div class="row">
+                        
+                                        <div class="col">
+                                            <span  style="font-size:12px;">
+                                                {{ $row['kelurahans'] }} -  {{ \Carbon\Carbon::parse($row['created_at'])->format('D m Y') }}
+                                            </span>
+                                        </div>
+                                        {{-- <div class="col">
+                                            <span class="text-success" style="font-size:10px;">
+                                                {{ \Carbon\Carbon::parse($row['created_at'])->format('D m Y') }}
+                                            </span>
+                                        </div> --}}
+                                    </div>
+                                </li>
+                                @if ($no == 5)
+                                @break
+                                @endif
+                                @endforeach
+                        
+                        
+                            </ul>
+                        </div>
+                   </div>
+            </div>
+        </div>
+
+
+
+
+       
 
 
 

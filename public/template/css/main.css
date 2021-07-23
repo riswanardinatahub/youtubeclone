@@ -28,9 +28,16 @@
     color: #777777;
     font-weight: 300;
 }
+@import url("https://fonts.googleapis.com/css?family=Muli:300,400,400i,500,700,800");
+@import url("https://fonts.googleapis.com/css?family=Satisfy");
+
+@font-face {
+    font-family: HoboStd;
+    src: url("../fonts/HoboStd.ttf"), url("../fonts/HoboStd.eot");
+}
 body {
     color: #777;
-    font-family: "Muli", "Segoe Ui", sans-serif;
+    font-family: "Muli", "Segoe Ui";
     font-size: 14px;
     font-weight: 300;
     line-height: 1.625em;
@@ -93,7 +100,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: "Poppins", sans-serif;
+    font-family: "Muli", "Segoe Ui";
     color: #222;
     line-height: 1.2em !important;
     margin-bottom: 0;
@@ -108,7 +115,7 @@ h6 {
 .h6 {
     margin-bottom: 0;
     margin-top: 0;
-    font-family: "Poppins", sans-serif;
+    font-family: "Muli", "Segoe Ui";
     font-weight: 600;
     color: #222;
 }
@@ -1721,6 +1728,8 @@ h6 {
 .main-menu {
     padding-bottom: 20px;
     padding-top: 20px;
+    padding-left: 100px !important;
+    padding-right: 100px !important;
 
     /* border-bottom: 1px solid #39353e; */
 }
@@ -1808,7 +1817,7 @@ h6 {
     content: "\f107";
     position: absolute;
     right: 15px;
-    font-family: FontAwesome;
+    font-family: "Muli", "Segoe Ui";
     font-style: normal;
     font-weight: normal;
 }
@@ -2710,7 +2719,7 @@ dl.accordion.time-line:before {
     position: absolute;
     top: 50%;
     left: 0;
-    font-family: "icomoon";
+    font-family: "Muli", "Segoe Ui";
     speak: none;
     font-style: normal;
     font-weight: bold;
@@ -2825,7 +2834,7 @@ dl.toggle.time-line:before {
     position: absolute;
     top: 50%;
     left: 0;
-    font-family: "icomoon";
+    font-family: "Muli", "Segoe Ui";
     speak: none;
     font-style: normal;
     font-weight: bold;

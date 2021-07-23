@@ -192,10 +192,10 @@
 				</div>
 			</div>
 		</div> --}}
-		<div class="container main-menu">
+		<div class="container-fluid main-menu px-5">
 			<div class="row align-items-center justify-content-between d-flex">
 				<div id="logo">
-					<a href="/"><img style="max-height: 30px;" src="{{ asset('foto/logo.png') }}" alt="" title="" /></a>
+					<a href="/"><img style="max-height: 50px;" src="{{ asset('foto/logo.png') }}" alt="" title="" /></a>
 				</div>
 
 				<nav id="nav-menu-container">
