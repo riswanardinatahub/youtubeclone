@@ -193,13 +193,99 @@
 			</div>
 		</div> --}}
 		<div class="container-fluid main-menu px-5">
-			<div class="row align-items-center justify-content-between d-flex">
+			<div class="row align-items-center  d-flex">
 				<div id="logo">
 					<a href="/"><img style="max-height: 50px;" src="{{ asset('foto/logo.png') }}" alt="" title="" /></a>
 				</div>
 
-				<nav id="nav-menu-container">
-					<ul class="nav-menu">
+				<div class=" ml-5 pl-5 dropdown show">
+					<a class=" dropdown-toggle" style="color: black; font-weight: 500;" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						Produk Desaku
+					</a>
+
+					<div class="dropdown-menu" style="width: 800px !important; height: 280px !important;" aria-labelledby="dropdownMenuLink">
+						<div class="row g-3">
+                                        <div class="col-lg-4 col-6">
+                                            <div class="col-megamenu">
+                                                <a class="dropdown-item teman-desaku"
+                                                    href="http://desaku-desanews.masuk.id/">
+                                                    <img class="zoom-logo mt-1" src="{{ asset('img/desanews.png') }}">
+                                                    <br>
+                                                    <small style="white-space: normal!important;">Berita dan kegiatan
+                                                        desa
+                                                        terkini dan terupdate di DesaNews!</small>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-6">
+                                            <div class="col-megamenu">
+                                                <a class="dropdown-item teman-desaku"
+                                                    href="http://desaku-desafeed.masuk.id/">
+                                                    <img class="zoom-logo" src="{{ asset('img/desafeed.png') }}">
+                                                    <br>
+                                                    <small style="white-space: normal!important;">Berbagi pengalaman
+                                                        pribadi,
+                                                        foto dan video berbagai warga desa di DesaFeed!</small>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-6">
+                                            <div class="col-megamenu">
+                                                <a class="dropdown-item teman-desaku"
+                                                    href="http://desaku-desatour.masuk.id/">
+                                                    <img class="zoom-logo" src="{{ asset('img/desatour.png') }}">
+                                                    <br>
+                                                    <small style="white-space: normal!important;">Jelajahi wisata,
+                                                        kuliner,
+                                                        penginapan, dan infrastruktur desa di DesaTour!</small>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-6">
+                                            <div class="col-megamenu">
+                                                <a class="dropdown-item teman-desaku"
+                                                    href="http://desaku-desafeed.masuk.id/social-media">
+                                                    <img class="zoom-logo" src="{{ asset('img/desatube.png') }}">
+                                                    <br>
+                                                    <small style="white-space: normal!important;">Publish video tentang
+                                                        desa,
+                                                        kegiatan desa dan cerita desa di DesaTube!</small>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-6">
+                                            <div class="col-megamenu">
+                                                <a class="dropdown-item teman-desaku"
+                                                    href="http://marketpalcedesaku.masuk.web.id/">
+                                                    <img class="zoom-logo" src="{{ asset('img/desastore.png') }}">
+                                                    <br>
+                                                    <small style="white-space: normal!important;">Berbagai produk desa
+                                                        yang
+                                                        dapat di Jual dan di Beli di DesaStore!</small>
+                                                </a>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-4 col-6">
+                                            <div class="col-megamenu">
+                                                <a class="dropdown-item teman-desaku"
+                                                    href="http://marketpalcedesaku.masuk.web.id/">
+                                                    <img class="zoom-logo" src="{{ asset('img/desacuss.png') }}">
+                                                    <br>
+                                                    <small style="white-space: normal!important;">Berbagai produk desa
+                                                        yang
+                                                        dapat di Jual dan di Beli di DesaStore!</small>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+					</div>
+					</div>
+				
+
+				<nav class="navbar-nav ml-auto" id="nav-menu-container">
+			
+					<ul class="nav-menu justify-content-between">
 						<li><a href="/">Home</a></li>
 						<li><a href="/tranding">Trending</a></li>
 						@auth
