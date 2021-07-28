@@ -8,6 +8,7 @@ use Illuminate\Support\Str;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Http;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -72,6 +73,27 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+
+         //mugny
+        Http::post('https://desaku-desacuss.masuk.id/api/register', [
+                    'email' => $data['email'],
+                    'password' => Hash::make($data['password']),
+                    'id_desa' => $data['villages_id'],
+                    'name' => $data['name'],
+                ])->json();
+        //riswan
+        Http::post('https://marketpalcedesaku.masuk.web.id/api/register', [
+                    'name' => $data['name'],
+                    'email' => $data['email'],
+                    'phone_number' => '',
+                    'password' => Hash::make($data['password']),
+                    'provinces_id' => $data['provinces_id'],
+                    'regencies_id' => $data['regencies_id'],
+                    'districts_id' => $data['districts_id'],
+                    'villages_id' => $data['villages_id'],
+                ])->json();
+
+                
         
             $user = User::create([
                 'name' => $data['name'],
