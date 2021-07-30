@@ -1,15 +1,17 @@
 <?php
 
-use App\Http\Controllers\AdminController;
 use App\Models\Video;
 use App\Models\Channel;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\App;
 use App\Http\Livewire\Video\AllVideo;
 use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\Video\EditVideo;
 use App\Http\Livewire\Video\WatchVideo;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use App\Http\Livewire\Video\CreateVideo;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\SerachController;
 use App\Http\Controllers\ChannelController;
 
@@ -43,11 +45,13 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 Route::get('/test' , function(){
     return view('test');
 });
+
+Route::get('/carivideo', [HomeController::class, 'carivideo'])->name('carivideo');
 
 Route::middleware('auth')->group( function(){
     Route::get('/channel/{channel}/edit', [ChannelController::class, 'edit'])->name('channel.edit');

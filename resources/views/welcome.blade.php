@@ -69,6 +69,12 @@
             </div>
         </div>
 
+ 
+
+
+
+
+
         <div class="row">
             <div class="col-3">
                  <div class="row justify-content-center">
@@ -158,7 +164,7 @@
                     </a>
                     <small>
                         {{ $video->channel->name }}  <br>
-                        Desa : {{ $video->village_name }}
+                        Desa : {{ $video->channel->user->villages->name }}
                         <br>
                              @php
                             $n =  $video->views ;
@@ -294,3 +300,9 @@
 </section>
 <!-- End cta-two Area -->
 @endsection
+
+@push('scripts')
+  
+ 
+@endpush
+

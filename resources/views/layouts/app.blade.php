@@ -394,6 +394,13 @@
 			
 					<ul class="nav-menu justify-content-between">
 						<li><a href="/">Home</a></li>
+						       <!-- Button trigger modal -->
+
+						<li><a  href="#" class="btn" data-toggle="modal" data-target="#exampleModal">
+						Cari
+						</a></li>
+						
+						
 						<li><a href="/tranding">Trending</a></li>
 						@auth
 						@if (Auth::user()->role =='user')
@@ -473,6 +480,82 @@
 	</header><!-- #header -->
 
 	@yield('content')
+    <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Cari Video</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+     
+        <div class="col-md-12" id="locations">
+                    <form action="/carivideo" method="GET">
+                        @csrf
+                        <div class="form-group row">
+                            <label for="provinces_id" class="col-md-4 col-form-label text-md-right">Provinsi</label>
+                            <div class="col-md-6">
+                            <select name="provinces_id" id="provinces_id" class="form-control" v-if="provinces" v-model="provinces_id">
+                            <option v-for="province in provinces" :value="province.id">@{{ province.name }}</option>
+                            </select>
+                            <select v-else class="form-control"></select>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="regencies_id" class="col-md-4 col-form-label text-md-right">Kabupaten</label>
+                            <div class="col-md-6">
+                            <select name="regencies_id" id="regencies_id" class="form-control" v-if="regencies"
+                            v-model="regencies_id">
+                            <option v-for="regency in regencies" :value="regency.id">@{{ regency.name }}</option>
+                            </select>
+                            <select v-else class="form-control"></select>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="districts_id" class="col-md-4 col-form-label text-md-right">Kecamatan/Kelurahan</label>
+                            <div class="col-md-6">
+                            <select name="districts_id" id="districts_id" class="form-control" v-if="districts"
+                            v-model="districts_id">
+                            <option v-for="district in districts" :value="district.id">@{{ district.name }}</option>
+                            </select>
+                            <select v-else class="form-control"></select>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="villages_id" class="col-md-4 col-form-label text-md-right">Desa</label>
+                            <div class="col-md-6">
+                            <select name="villages_id" id="villages_id" class="form-control" v-if="villages"
+                            v-model="villages_id">
+                            <option v-for="village in villages" :value="village.id">@{{ village.name }}</option>
+                            </select>
+                            <select v-else class="form-control"></select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group row mb-0">
+                            <div class="col-md-6 offset-md-4">
+                                <button type="submit" class="primary-btn text-uppercase">Cari</button>
+                            </div>
+                        </div>
+                    </form>
+             
+        
+    </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Keluar</button>
+        {{-- <button type="button" class="btn btn-primary">Save changes</button> --}}
+      </div>
+    </div>
+  </div>
+</div>
+
 
 	<!-- start footer Area -->
 	<footer class="footer-area section-gap">
@@ -548,7 +631,80 @@
 		</div>
 	</footer>
 	<!-- End footer Area -->
+<script src="/vendor/vue/vue.js"></script>
+  <script src="https://unpkg.com/vue-toasted"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
+ <script>
+  var locations = new Vue({
+    el: "#locations",
+    mounted() {
+      AOS.init();
+      this.getProvincesData();
+    },
+    data: {
+      provinces: null,
+      regencies: null,
+      districts: null,
+      villages: null,
+      provinces_id: null,
+      regencies_id: null,
+      districts_id: null,
+      villages_id: null,
+    },
+    methods: {
+      getProvincesData() {
+        var self = this;
+        axios.get('{{ route('api-provinces') }}')
+          .then(function (response) {
+            self.provinces = response.data;
+          })
+      },
+
+      getRegenciesData() {
+        var self = this;
+        axios.get('{{ url('api/regencies') }}/' + self.provinces_id)
+          .then(function (response) {
+            self.regencies = response.data;
+          })
+      },
+
+      getDistrictsData() {
+        var self = this;
+        axios.get('{{ url('api/districts') }}/' + self.regencies_id)
+          .then(function (response) {
+            self.districts = response.data;
+          })
+      },
+
+      getVillagesData() {
+        var self = this;
+        axios.get('{{ url('api/villages') }}/' + self.districts_id)
+          .then(function (response) {
+            self.villages = response.data;
+          })
+      },
+
+    },
+    watch: {
+      provinces_id: function (val, oldVal) {
+        this.regencies_id = null;
+        this.getRegenciesData();
+      },
+
+      regencies_id: function (val, oldVal) {
+        this.districts_id = null;
+        this.getDistrictsData();
+      },
+
+      districts_id: function (val, oldVal) {
+        this.villages_id = null;
+        this.getVillagesData();
+      }
+    }
+  });
+
+</script>
 @stack('scripts')
   @livewireScripts
 
