@@ -21,6 +21,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::post('register', [VideoController::class , 'register']);
+
 
 Route::get('provinces', [LocationController::class , 'provinces'])->name('api-provinces');
 Route::get('regencies/{provinces_id}', [LocationController::class ,'regencies'])->name('api-regencies');
