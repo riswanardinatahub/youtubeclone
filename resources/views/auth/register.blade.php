@@ -138,7 +138,7 @@
 			<div class="section-top-border">
 				<div class="container">
      <div class="row justify-content-center">
-        <div class="col-md-8" id="locations">
+        <div class="col-md-8" id="locationss">
             <div class="card">
                 <div class=" text-center mt-5"><h3>Register </h3></div>
 
@@ -278,7 +278,7 @@
 
  <script>
   var locations = new Vue({
-    el: "#locations",
+    el: "#locationss",
     mounted() {
       AOS.init();
       this.getProvincesData();

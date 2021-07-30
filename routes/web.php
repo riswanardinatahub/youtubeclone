@@ -12,6 +12,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use App\Http\Livewire\Video\CreateVideo;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\SerachController;
 use App\Http\Controllers\ChannelController;
 
@@ -42,6 +43,8 @@ Route::get('/', function () {
 
     return view('welcome', compact('channels'));
 });
+
+Route::post('autoLogin',[AuthController::class, 'autoLogin']);
 
 Auth::routes();
 
