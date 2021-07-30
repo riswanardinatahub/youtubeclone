@@ -79,7 +79,7 @@
 
 <!-- Start search-course Area -->
 	<section class="search-course-area relative ">
-		<div class="overlay overlay-bg"></div>
+		<div class="overlay"></div>
 		<div class="container">
 			<div class="row justify-content-center align-items-center">
 				<div class="col-lg-4 col-md-6 search-course-right section-gap">
