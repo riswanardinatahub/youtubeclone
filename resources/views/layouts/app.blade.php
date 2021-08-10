@@ -396,7 +396,7 @@
 						<li><a href="/">Home</a></li>
 						       <!-- Button trigger modal -->
 
-						<li><a  href="#" class="btn" data-toggle="modal" data-target="#exampleModal">
+						<li><a  href="#" class="btn" data-toggle="modal" data-target="#exampleModalasd">
 						Cari
 						</a></li>
 						
@@ -481,7 +481,7 @@
 
 	@yield('content')
     <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="exampleModalasd" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -631,6 +631,26 @@
 		</div>
 	</footer>
 	<!-- End footer Area -->
+@stack('scripts')
+  @livewireScripts
+
+	<script src="{{ asset('template/js/vendor/jquery-2.2.4.min.js') }}"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+		integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+		crossorigin="anonymous"></script>
+	<script src="{{ asset('template/js/vendor/bootstrap.min.js') }}"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>
+	<script src="{{ asset('template/js/easing.min.js') }}"></script>
+	<script src="{{ asset('template/js/hoverIntent.js') }}"></script>
+	<script src="{{ asset('template/js/superfish.min.js') }}"></script>
+	<script src="{{ asset('template/js/jquery.ajaxchimp.min.js') }}"></script>
+	<script src="{{ asset('template/js/jquery.magnific-popup.min.js') }}"></script>
+	<script src="{{ asset('template/js/jquery.tabs.min.js') }}"></script>
+	<script src="{{ asset('template/js/jquery.nice-select.min.js') }}"></script>
+	<script src="{{ asset('template/js/owl.carousel.min.js') }}"></script>
+	<script src="{{ asset('template/js/mail-script.js') }}"></script>
+	<script src="{{ asset('template/js/main.js') }}"></script>
+
 <script src="/vendor/vue/vue.js"></script>
   <script src="https://unpkg.com/vue-toasted"></script>
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
@@ -705,26 +725,6 @@
   });
 
 </script>
-@stack('scripts')
-  @livewireScripts
-
-	<script src="{{ asset('template/js/vendor/jquery-2.2.4.min.js') }}"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-		integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-		crossorigin="anonymous"></script>
-	<script src="{{ asset('template/js/vendor/bootstrap.min.js') }}"></script>
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>
-	<script src="{{ asset('template/js/easing.min.js') }}"></script>
-	<script src="{{ asset('template/js/hoverIntent.js') }}"></script>
-	<script src="{{ asset('template/js/superfish.min.js') }}"></script>
-	<script src="{{ asset('template/js/jquery.ajaxchimp.min.js') }}"></script>
-	<script src="{{ asset('template/js/jquery.magnific-popup.min.js') }}"></script>
-	<script src="{{ asset('template/js/jquery.tabs.min.js') }}"></script>
-	<script src="{{ asset('template/js/jquery.nice-select.min.js') }}"></script>
-	<script src="{{ asset('template/js/owl.carousel.min.js') }}"></script>
-	<script src="{{ asset('template/js/mail-script.js') }}"></script>
-	<script src="{{ asset('template/js/main.js') }}"></script>
-
 
 </body>
 
